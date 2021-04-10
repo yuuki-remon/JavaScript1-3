@@ -8,7 +8,7 @@
     console.log("========================");
     
     for (let i = 0; i < taskList.length; i++) {
-      console.log(`${i} : [内容]${taskList[i].content}、[ジャンル]${taskList[i].jenre}`);
+      console.log(`${i} : [内容]${taskList[i].content}、[ジャンル]${taskList[i].genre}`);
     };
   }
 
@@ -28,17 +28,17 @@
   let taskList = [
     {
       content:'机を片付ける', 
-      jenre:'掃除',
+      genre:'掃除',
     },
 
     {
       content:'牛乳を買う',
-      jenre:'買い物',
+      genre:'買い物',
     },
 
     {
       content:'散歩する',
-      jenre:'運動',
+      genre:'運動',
     },
   ];
 
@@ -56,7 +56,7 @@
       
       taskList.push({
         content:task, 
-        jenre:category,
+        genre:category,
       });
       
       break;
