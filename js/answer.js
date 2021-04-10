@@ -8,16 +8,17 @@
     console.log("========================");
   
     for (let i = 0; i < taskList.length; i++) {
-      console.log(i + ' : ' + taskList[i]);
+      console.log(`${i} : ${taskList[i]}`);
     }
   }
   
-  const taskList = ['掃除', '買い物', '散歩'];
+  let taskList = ['掃除', '買い物', '散歩'];
   
   taskContent();
   
   while (true) {
     let task = prompt('タスクを入力してください');
+    
     if (task === '') {
       alert('入力されていません。');
     } 
