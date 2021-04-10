@@ -6,31 +6,61 @@
     console.log("========================");
     console.log("現在持っているタスク一覧");
     console.log("========================");
-  
-    for (let i = 0; i < taskList.length; i++) {
-      console.log(`${i} : ${taskList[i]}`);
-    }
-  }
-  
-  let taskList = ['掃除', '買い物', '散歩'];
-  
-  taskContent();
-  
-  while (true) {
-    let task = prompt('タスクを入力してください');
     
-    if (task === '') {
+    for (let i = 0; i < taskList.length; i++) {
+      console.log(`${i} : [内容]${taskList[i].content}、[ジャンル]${taskList[i].jenre}`);
+    };
+  }
+
+  function txtWrite(txt) {
+    
+    if (txt === '') {
       alert('入力されていません。');
     } 
-    else if (task === null) {
+    else if (txt === null) {
       alert('キャンセルされました。');
     }
     else {
-      taskList.push(task);
       alert('新しいタスクを追加しました。');
     }
+  }
+  
+  let taskList = [
+    {
+      content:'机を片付ける', 
+      jenre:'掃除',
+    },
 
+    {
+      content:'牛乳を買う',
+      jenre:'買い物',
+    },
+
+    {
+      content:'散歩する',
+      jenre:'運動',
+    },
+  ];
+
+  taskContent();
+  
+  while (true) {
+    const task = prompt('タスクを入力してください');
+    txtWrite(task);
     if (task === '' || task === null) continue;
+
+    while (true) {
+      const category = prompt('ジャンルを入力してください');
+      txtWrite(category); 
+      if (category === '' || category === null) continue;
+      
+      taskList.push({
+        content:task, 
+        jenre:category,
+      });
+      
+      break;
+    }
     
     taskContent();
 
